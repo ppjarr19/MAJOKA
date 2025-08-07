@@ -120,17 +120,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <td> (Bolsa 250g)</td>
+                    <td> Bolsa 250g </td>
                     <td>$20.00 MXN (menudeo) $17.00 MXN (mayoreo)</td>
                     <td>Pedidos m&iacute; de 5 bolsas</td>
                 </tr>
                 <tr>
-                    <td> (kilo)</td>
+                    <td> Kilo </td>
                     <td>$60.00  (menudeo) $55.00 MXN (mayoreo)</td>
                     <td>Pedidos desde 10 kg</td>
                 </tr>
                 <tr>
-                    <td>(Bolsa 450g)</td>
+                    <td> Bolsa 450g </td>
                     <td>$33.00 MXN (menudeo) $30.00 MXN (mayoreo)</td>
                     <td>Mayoreo  10 bolsas</td>
                 </tr>
@@ -140,7 +140,7 @@
             <h2>Contacto</h2><a href="https://wa.me/5215636301189" target="_blank">WhatsApp</a> <a href="mailto:jos_190389@hotmail.com" class="email">Correo</a>
         </div>
     </div>
-    <footer>&copy; 2025 ****** - ******* Caseros. Todos *** ******** reservados.</footer>
+    <footer>&copy; 2025 MAJOKA - Totopos Caseros. Todos Los Derechos reservados.</footer>
 
 <div style="color: red; font-size: 12px; width: 600px; margin: 0 auto; text-align: center;">Prueba Word to HTML - <a href="https://wordtohtml.net/site/payment">P&aacute;sate a PRO</a>.</div>
 </body>
