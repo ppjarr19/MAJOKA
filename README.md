@@ -120,19 +120,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>******* (bolsa 250g)</td>
+                    <td> (bolsa 250g)</td>
                     <td>$20.00 MXN (menudeo) $17.00 MXN (mayoreo)</td>
-                    <td>Pedidos m&iacute;***** de 5 bolsas</td>
+                    <td>Pedidos m&iacute; de 5 bolsas</td>
                 </tr>
                 <tr>
-                    <td>******* (kilo)</td>
-                    <td>$60.00 *** (menudeo) $55.** MXN (mayoreo)</td>
+                    <td> (kilo)</td>
+                    <td>$60.00  (menudeo) $55.00 MXN (mayoreo)</td>
                     <td>Pedidos desde 10 kg</td>
                 </tr>
                 <tr>
                     <td>Bolsa 450g</td>
                     <td>$33.00 MXN (menudeo) $30.00 MXN (mayoreo)</td>
-                    <td>Mayoreo ***** 10 bolsas</td>
+                    <td>Mayoreo  10 bolsas</td>
                 </tr>
             </tbody>
         </table>
