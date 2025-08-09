@@ -1,0 +1,67 @@
+# Crear cartel más elaborado con textura, marco decorativo e iconos para datos
+from PIL import ImageFilter
+
+# Crear fondo base color claro
+poster = Image.new('RGB', (size, size), (248, 235, 201))
+
+# Crear textura suave tipo papel
+texture = Image.effect_noise((size, size), 20).convert("L")
+texture = texture.point(lambda x: x * 0.6 + 180)  # aclarar
+texture_rgb = Image.merge("RGB", (texture, texture, texture))
+poster = Image.blend(poster, texture_rgb, 0.15)
+
+draw = ImageDraw.Draw(poster)
+
+# Marco decorativo
+border_color = (200, 120, 20)
+draw.ellipse([20, 20, size-20, size-20], outline=border_color, width=10)
+
+# Colocar logo centrado
+logo_max_w = int(size * 0.55)
+w, h = logo.size
+scale = min(logo_max_w / w, 1.0)
+logo_resized = logo.resize((int(w*scale), int(h*scale)), Image.LANCZOS)
+logo_x = (size - logo_resized.width) // 2
+logo_y = 120
+poster.paste(logo_resized, (logo_x, logo_y), logo_resized)
+
+# Lema "Crujiente tradición" justo debajo del logo (ya está en el logo pero lo resaltamos)
+lema = "Crujiente tradición"
+lema_font_big = get_font(48)
+lema_w, lema_h = draw.textsize(lema, font=lema_font_big)
+draw.text(((size - lema_w) / 2, logo_y + logo_resized.height + 20),
+          lema, fill=(150, 60, 0), font=lema_font_big)
+
+# Datos de contacto con "iconos" simples
+info_font_big = get_font(32)
+contact_items = [
+    ("📞", "Tel: 5636 301 189"),
+    ("📍", "Callejón del Panal 12, Col. Pensil"),
+    ("✉️", "jos_190389@hotmail.com"),
+    ("📱", "Facebook e Instagram: @majoka")
+]
+
+# Bloque inferior con fondo claro
+block_y = size - 220
+draw.rounded_rectangle([60, block_y, size - 60, size - 60],
+                       radius=20, fill=(255, 240, 200))
+
+cy = block_y + 20
+for icon, text in contact_items:
+    line = f"{icon} {text}"
+    w_line = draw.textsize(line, font=info_font_big)[0]
+    draw.text(((size - w_line) / 2, cy), line, fill=(100, 50, 0), font=info_font_big)
+    cy += 40
+
+# Sombra ligera al cartel (simulada con desenfoque)
+shadow = poster.filter(ImageFilter.GaussianBlur(2))
+
+# Guardar archivos
+poster_png_pro = Path("/mnt/data/poster_majoka_logo_pro_1080.png")
+poster.save(poster_png_pro, dpi=(72,72))
+
+poster_hr = poster.resize((print_size, print_size), Image.LANCZOS)
+poster_pdf_pro = Path("/mnt/data/poster_majoka_logo_pro_300dpi.pdf")
+poster_hr.save(poster_pdf_pro, "PDF", resolution=300.0)
+
+poster_png_pro, poster_pdf_pro
